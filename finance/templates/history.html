@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+        <main class="container p-5">
+            
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>User ID</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Purchase/Sale Price</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+                {% for row in transactions %}
+                <tr>
+                        <td>{{row["trans_id"]}}</td>
+                        <td>{{row["user_id"]}}</td>
+                        <td>{{row["symbol"]}}</td>
+                        <td>{{row["shares"]}}</td>
+                        <td>{{row["time"]}}</td>
+                        <td>{{row["type"]}}</td>
+                        <td>{{row["purchase_price"]}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+        
+    </table>
+
+        </main>
+{% endblock %}
